@@ -4,7 +4,7 @@ import express from "express";
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = dirname(__filename);
 
-// import {getUser, getProfile, userRegister, deleteUser, editUser,changePassword, searchUser,userLogin,uniqueUser, userList} from '../controller/user-controller.js'
+import { getUser, getProfile, userRegister, deleteUser, editUser, changePassword, searchUser, userLogin, uniqueUser, userList } from '../controller/user-controller.js'
 // import { deleteFile, deleteFiles, getImagesList, fileUpload } from '../controller/fileController.js';
 // import { getParent, addParent, deleteParent, updateParent } from "../controller/parentController.js";
 // import { getCategory, addCategory, deleteCategory, updateCategory } from "../controller/categoryController.js";
@@ -41,16 +41,16 @@ const tokenVerify = (req, res, next) => {
 }
 
 //user
-// router.get('/', getUser);
-// router.post('/userList', tokenVerify, userList);
-// router.post('/register', userRegister);
-// router.delete('/delete/:id', deleteUser);
-// router.put('/users/update/:id', editUser);
-// router.put('/users/changePassword/:id', changePassword);
-// router.get('/users/search/:key', searchUser);
-// router.get('/users/profile/:id', getProfile);
-// router.post('/login', userLogin);
-// router.get('/users/unique/:email', uniqueUser);
+router.get('/', getUser);
+router.post('/userList', tokenVerify, userList);
+router.post('/register', userRegister);
+router.delete('/delete/:id', deleteUser);
+router.put('/users/update/:id', editUser);
+router.put('/users/changePassword/:id', changePassword);
+router.get('/users/search/:key', searchUser);
+router.get('/users/profile/:id', getProfile);
+router.post('/login', userLogin);
+router.get('/users/unique/:email', uniqueUser);
 
 //Parent
 // router.get('/getParent', getParent);
