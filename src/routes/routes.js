@@ -5,17 +5,17 @@ import express from "express";
 // const __dirname = dirname(__filename);
 
 import { getUser, getProfile, userRegister, deleteUser, editUser, changePassword, searchUser, userLogin, uniqueUser, userList } from '../controller/user-controller.js'
-// import { deleteFile, deleteFiles, getImagesList, fileUpload } from '../controller/fileController.js';
-// import { getParent, addParent, deleteParent, updateParent } from "../controller/parentController.js";
-// import { getCategory, addCategory, deleteCategory, updateCategory } from "../controller/categoryController.js";
-// import {
-//     getDonation, addDonation, deleteDonation, updateDonation,
-//     donationSearchByCategory, searchDonation, getSingleDonation,
-//     wishlistHandle, getWishlists
-// } from "../controller/donationController.js";
-// import { getCart, addToCart, deleteCart, clearCart } from '../controller/cartController.js'
-// import { addWishlist, getWishlist, deleteWishlist, clearWishlist } from "../controller/wishlistController.js";
-// import { uploadImage } from "../controller/imageController.js";
+import { deleteFile, deleteFiles, getImagesList, fileUpload } from '../controller/fileController.js';
+import { getParent, addParent, deleteParent, updateParent } from "../controller/parentController.js";
+import { getCategory, addCategory, deleteCategory, updateCategory } from "../controller/categoryController.js";
+import {
+    getDonation, addDonation, deleteDonation, updateDonation,
+    donationSearchByCategory, searchDonation, getSingleDonation,
+    wishlistHandle, getWishlists
+} from "../controller/donationController.js";
+import { getCart, addToCart, deleteCart, clearCart } from '../controller/cartController.js'
+import { addWishlist, getWishlist, deleteWishlist, clearWishlist } from "../controller/wishlistController.js";
+import { uploadImage } from "../controller/imageController.js";
 import jwt from 'jsonwebtoken';
 const jwtkey = "jwt";
 const router = express.Router();
@@ -53,43 +53,43 @@ router.post('/login', userLogin);
 router.get('/users/unique/:email', uniqueUser);
 
 //Parent
-// router.get('/getParent', getParent);
-// router.post('/addParent', addParent);
-// router.delete('/deleteParent/:id', deleteParent);
-// router.put('/updateParent/:_id', updateParent);
+router.get('/getParent', getParent);
+router.post('/addParent', addParent);
+router.delete('/deleteParent/:id', deleteParent);
+router.put('/updateParent/:_id', updateParent);
 
 //Category
-// router.get('/getCategory', getCategory);
-// router.post('/addCategory', addCategory);
-// router.delete('/deleteCategory/:id', deleteCategory);
-// router.put('/updateCategory/:_id', updateCategory);
+router.get('/getCategory', getCategory);
+router.post('/addCategory', addCategory);
+router.delete('/deleteCategory/:id', deleteCategory);
+router.put('/updateCategory/:_id', updateCategory);
 
 //Donation
-// router.get('/getDonation', getDonation);
-// router.get('/getSingleDonation/:id', getSingleDonation);
-// router.post('/addDonation', addDonation);
-// router.delete('/deleteDonation/:id', deleteDonation);
-// router.put('/updateDonation/:_id', updateDonation);
-// router.get('/donationSearchByCategory/:key', donationSearchByCategory);
-// router.get('/searchDonation/:key', searchDonation);
+router.get('/getDonation', getDonation);
+router.get('/getSingleDonation/:id', getSingleDonation);
+router.post('/addDonation', addDonation);
+router.delete('/deleteDonation/:id', deleteDonation);
+router.put('/updateDonation/:_id', updateDonation);
+router.get('/donationSearchByCategory/:key', donationSearchByCategory);
+router.get('/searchDonation/:key', searchDonation);
 
 
 //Cart
-// router.get('/getCart/:id', getCart);
-// router.post('/addToCart', addToCart);
-// router.delete('/deleteCart/:id', deleteCart);
-// router.delete('/clearCart/:id', clearCart);
+router.get('/getCart/:id', getCart);
+router.post('/addToCart', addToCart);
+router.delete('/deleteCart/:id', deleteCart);
+router.delete('/clearCart/:id', clearCart);
 
 //Wishlist
-// router.get('/getWishlist/:id', getWishlist);
-// router.delete('/deleteWishlist/:id', deleteWishlist);
-// router.delete('/clearWishlist/:id', clearWishlist);
-// router.post('/addWishlist/', addWishlist);
+router.get('/getWishlist/:id', getWishlist);
+router.delete('/deleteWishlist/:id', deleteWishlist);
+router.delete('/clearWishlist/:id', clearWishlist);
+router.post('/addWishlist/', addWishlist);
 
 
-// router.post('/uploads/', uploadImage);
-// router.put('/wishlistHandle/:_id', wishlistHandle);
-// router.get('/wishlistHandle/:key', getWishlists);
+router.post('/uploads/', uploadImage);
+router.put('/wishlistHandle/:_id', wishlistHandle);
+router.get('/wishlistHandle/:key', getWishlists);
 
 //File Upload
 /*
