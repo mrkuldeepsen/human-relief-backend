@@ -1,8 +1,8 @@
 import express from "express";
-// import { fileURLToPath } from 'url';
-// import path, { dirname } from 'path';
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 import { getUser, getProfile, userRegister, deleteUser, editUser, changePassword, searchUser, userLogin, uniqueUser, userList } from '../controller/user-controller.js'
 import { deleteFile, deleteFiles, getImagesList, fileUpload } from '../controller/fileController.js';
@@ -118,10 +118,10 @@ router.post('/uploads', (req,res)=>{
         }) 
     }) 
  */
-// import { getTransaction, addTransaction, singleTransaction } from "../controller/transactionController.js";
+import { getTransaction, addTransaction, singleTransaction } from "../controller/transactionController.js";
 
-// router.get('/transactions/:_id', getTransaction);
-// router.get('/transaction/:_id', singleTransaction);
-// router.post('/transaction', addTransaction);
+router.get('/transactions/:_id', getTransaction);
+router.get('/transaction/:_id', singleTransaction);
+router.post('/transaction', addTransaction);
 
 export default router;  
