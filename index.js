@@ -23,6 +23,11 @@ app.use(express.static('public'));
 app.use('/uploads', express.static('images'));
 
 
+app.get('*', function (req, res) {
+    res.status(404).send({ message: 'Huhhh smart!' });
+});
+
+
 
 mongoose.connect(URL, {
     useNewUrlParser: true,
